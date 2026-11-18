@@ -141,8 +141,71 @@
     <li class="a" style="--d:.4s"><svg viewBox="0 0 40 40"><circle cx="20" cy="20" r="18" fill="#1E9C7F"/><path class="draw" pathLength="100" d="M11 21 L18 28 L30 13" fill="none" stroke="#F4F1EA" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/></svg>Estimates health on new batteries</li>
     <li class="a" style="--d:.6s"><svg viewBox="0 0 40 40"><path d="M20 3 L38 35 H2 Z" fill="#E0A03A"/><rect x="18" y="13" width="4" height="13" rx="2" fill="#0E1A2B"/><circle cx="20" cy="30" r="2.3" fill="#0E1A2B"/></svg>Accuracy drops on other datasets</li>
     <li class="a" style="--d:.8s"><svg viewBox="0 0 40 40"><path d="M20 3 L38 35 H2 Z" fill="#E0A03A"/><rect x="18" y="13" width="4" height="13" rx="2" fill="#0E1A2B"/><circle cx="20" cy="30" r="2.3" fill="#0E1A2B"/></svg>Life forecast not yet reliable</li>
-    <li class="a" style="--d:1s"><svg viewBox="0 0 40 40"><path d="M20 3 L38 35 H2 Z" fill="#E0A03A"/><rect x="18" y="13" width="4" height="13" rx="2" fill="#0E1A2B"/><circle cx="20" cy="30" r="2.3" fill="#0E1A2B"/></svg>Alert timing not yet reliable</li>
+    <li class="a" style="--d:1s"><svg viewBox="0 0 40 40"><path d="M20 3 L38 35 H2 Z" fill="#E0A03A"/><rect x="18" y="13" width="4" height="13" rx="2" fill="#0E1A2B"/><circle cx="20" cy="30" r="2.3" fill="#0E1A2B"/></svg>Replacement timing not yet reliable</li>
   </ul>
+</section>
+
+<section class="s paper" id="s-check">
+  <p class="tag a">Check soon</p>
+  <h2 class="a wide" style="--d:.2s">Flag batteries to check, not to replace.</h2>
+  <div class="journey check-flow">
+    <div class="stepcard a" style="--d:.4s">
+      <svg viewBox="0 0 200 140" role="img" aria-label="Alert bell over a battery">
+        <rect x="30" y="40" width="44" height="80" rx="8" fill="#0E1A2B"/><rect x="42" y="32" width="20" height="10" rx="3" fill="#0E1A2B"/>
+        <rect class="fade" style="--d:.6s;--end:.4" x="38" y="60" width="28" height="52" rx="4" fill="#E0A03A"/>
+        <g class="bob" style="--d:.8s"><path d="M120 92 V68 a24 24 0 0 1 48 0 V92 l8 10 H112 Z" fill="#E0A03A"/><circle cx="144" cy="110" r="7" fill="#E0A03A"/></g>
+      </svg>
+      <h3>Model flags it</h3>
+      <p class="cap">about 60 days ahead</p>
+    </div>
+    <svg class="link a" style="--d:.7s" viewBox="0 0 120 40" aria-hidden="true"><line class="dash" x1="4" y1="20" x2="96" y2="20" stroke="#1E9C7F" stroke-width="6" stroke-linecap="round"/><path d="M92 8 L112 20 L92 32" fill="none" stroke="#1E9C7F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="stepcard a" style="--d:.9s">
+      <svg viewBox="0 0 200 140" role="img" aria-label="Magnifying glass checking a battery">
+        <rect x="40" y="36" width="44" height="84" rx="8" fill="#0E1A2B"/><rect x="52" y="28" width="20" height="10" rx="3" fill="#0E1A2B"/>
+        <rect x="48" y="70" width="28" height="42" rx="4" fill="#1E9C7F"/>
+        <g class="bob" style="--d:1.1s"><circle cx="122" cy="70" r="30" fill="#F4F1EA" fill-opacity=".6" stroke="#0E1A2B" stroke-width="8"/><line x1="144" y1="92" x2="170" y2="118" stroke="#0E1A2B" stroke-width="12" stroke-linecap="round"/></g>
+      </svg>
+      <h3>Capacity check</h3>
+      <p class="cap">a real measurement</p>
+    </div>
+    <svg class="link a" style="--d:1.2s" viewBox="0 0 120 40" aria-hidden="true"><line class="dash" x1="4" y1="20" x2="96" y2="20" stroke="#1E9C7F" stroke-width="6" stroke-linecap="round"/><path d="M92 8 L112 20 L92 32" fill="none" stroke="#1E9C7F" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    <div class="stepcard a" style="--d:1.4s">
+      <svg viewBox="0 0 200 140" role="img" aria-label="Two outcomes: replace or keep">
+        <circle class="pop" style="--d:1.6s" cx="62" cy="70" r="40" fill="#E0A03A"/>
+        <path d="M44 64 a20 20 0 0 1 34 -8 M80 48 v10 h-10 M80 76 a20 20 0 0 1 -34 8 M44 92 v-10 h10" fill="none" stroke="#0E1A2B" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
+        <circle class="pop" style="--d:1.8s" cx="142" cy="70" r="40" fill="#1E9C7F"/>
+        <path class="draw" pathLength="100" style="animation-delay:2s" d="M124 72 L137 85 L161 57" fill="none" stroke="#F4F1EA" stroke-width="8" stroke-linecap="round" stroke-linejoin="round"/>
+      </svg>
+      <h3>Replace or keep</h3>
+      <p class="cap">the check decides</p>
+    </div>
+  </div>
+  <div class="flagrow a" style="--d:1.5s">
+    <div class="minis">
+      <svg class="mini pop" style="--d:1.60s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.66s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.72s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.78s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.84s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.90s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:1.96s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:2.02s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:2.08s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:2.14s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:2.20s" viewBox="0 0 30 50" role="img" aria-label="Flagged before end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#1E9C7F"/></svg>
+      <svg class="mini pop" style="--d:2.26s" viewBox="0 0 30 50" role="img" aria-label="Flagged after end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#E0A03A"/></svg>
+      <svg class="mini pop" style="--d:2.32s" viewBox="0 0 30 50" role="img" aria-label="Flagged after end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#E0A03A"/></svg>
+      <svg class="mini pop" style="--d:2.38s" viewBox="0 0 30 50" role="img" aria-label="Flagged after end of life"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#E0A03A"/></svg>
+      <svg class="mini pop" style="--d:2.44s" viewBox="0 0 30 50" role="img" aria-label="Not flagged"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#C9C2B1"/></svg>
+      <svg class="mini pop" style="--d:2.50s" viewBox="0 0 30 50" role="img" aria-label="Not flagged"><rect x="10" y="1" width="10" height="5" rx="2" fill="#0E1A2B"/><rect x="2" y="5" width="26" height="44" rx="5" fill="#C9C2B1"/></svg>
+    </div>
+    <ul class="legend">
+      <li><i style="background:#1E9C7F"></i><b>11</b> flagged before end of life</li>
+      <li><i style="background:#E0A03A"></i><b>3</b> flagged late</li>
+      <li><i style="background:#C9C2B1"></i><b>2</b> missed</li>
+    </ul>
+  </div>
+  <p class="note a" style="--d:2.4s">Tested on 16 batteries the model never saw. Only 1 of 14 healthy batteries got an unneeded check.</p>
 </section>
 
 <section class="s paper" id="s6">
