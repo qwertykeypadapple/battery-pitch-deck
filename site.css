@@ -182,3 +182,14 @@ p { margin: 0; }
 .art-h { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #0E1A2B; }
 .art-l { font-family: 'Inter', Arial, sans-serif; font-size: 14px; fill: #4A5568; }
 .art-n { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #F4F1EA; }
+
+/* Where-it-stands figures */
+.stand { width: min(calc(100vw - 180px), 1240px); }
+.figgrid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.fig { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 4px; }
+.fig svg { width: 100%; max-width: 140px; height: auto; margin-bottom: 6px; }
+.fig b { font-size: clamp(14px, 1.3vw, 17px); line-height: 1.25; }
+.fig small { font-size: clamp(12px, 1.05vw, 14px); color: #4A5568; }
+.fig .hl { color: #0E7A62; font-weight: 700; }
+.fig-n { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #0E1A2B; }
+@media (max-width: 760px) { .figgrid { grid-template-columns: 1fr 1fr 1fr; gap: 8px; } }
