@@ -154,3 +154,17 @@ p { margin: 0; }
 .legend b { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 1.2em; }
 .note { font-size: clamp(14px, 1.3vw, 17px); color: #4A5568; max-width: 760px; }
 @media (max-width: 760px) { .flagrow { flex-direction: column; } .minis { flex-wrap: wrap; justify-content: center; } }
+
+/* Where-it-stands slide */
+#s5 h2.wide { max-width: 22ch; }
+.stand { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px); width: min(calc(100vw - 180px), 1100px); }
+.standcol { flex: 1; border-radius: 24px; padding: 24px 28px; text-align: left; display: flex; flex-direction: column; gap: 16px; }
+.standcol h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: clamp(20px, 2vw, 26px); margin: 0; }
+.standcol.now { background: #E9E4D8; }
+.standcol.next { background: transparent; border: 3px dashed #1E9C7F; }
+.standcol.next h3 { color: #0E7A62; }
+.standcol .status { font-size: clamp(17px, 1.7vw, 22px); gap: 16px; }
+.standcol .status span { display: flex; flex-direction: column; gap: 2px; }
+.standcol .status small { font-size: clamp(14px, 1.2vw, 16px); color: #4A5568; }
+.standcol .status svg { width: 38px; height: 38px; flex: 0 0 38px; }
+@media (max-width: 760px) { .stand { flex-direction: column; } .stand .link { transform: rotate(90deg); } }
