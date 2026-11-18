@@ -1,0 +1,141 @@
+* { box-sizing: border-box; }
+html, body { margin: 0; height: 100%; overflow: hidden; font-family: 'Inter', Arial, sans-serif; color: #0E1A2B; background: #F4F1EA; }
+.deck { display: flex; width: 100vw; height: 100vh; overflow-x: auto; overflow-y: hidden; scroll-snap-type: x mandatory; scrollbar-width: none; }
+.deck::-webkit-scrollbar { display: none; }
+.s { flex: 0 0 100vw; width: 100vw; height: 100vh; scroll-snap-align: start; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 28px; padding: 72px 8vw; text-align: center; overflow: hidden; }
+.paper { background: #F4F1EA; color: #0E1A2B; }
+.ink { background: #0E1A2B; color: #F4F1EA; }
+h1, h2 { font-family: 'Space Grotesk', Arial, sans-serif; margin: 0; font-weight: 700; line-height: 1.04; }
+h1 { font-size: clamp(44px, 6vw, 96px); }
+h2 { font-size: clamp(36px, 4.6vw, 72px); max-width: 16ch; }
+p { margin: 0; }
+.tag { font-size: 18px; font-weight: 600; letter-spacing: .16em; text-transform: uppercase; color: #0E7A62; }
+.sub { font-size: clamp(18px, 2vw, 26px); color: #4A5568; }
+.ink .sub { color: #B9C4D0; }
+.big { font-family: 'Space Grotesk', Arial, sans-serif; font-size: clamp(64px, 8vw, 120px); font-weight: 700; line-height: 1; }
+
+/* Slide 1 */
+.split { display: flex; align-items: center; justify-content: space-between; gap: 6vw; width: 100%; max-width: 1200px; text-align: left; }
+.split .text { display: flex; flex-direction: column; gap: 22px; }
+.art { width: min(40vw, 480px); height: auto; }
+
+/* Slide 2 */
+.cells { display: flex; gap: clamp(20px, 4vw, 64px); align-items: flex-end; }
+.cell { width: clamp(70px, 8vw, 110px); height: auto; }
+
+/* Slide 3 */
+.flow { display: flex; align-items: center; gap: clamp(12px, 2vw, 28px); }
+.node { width: clamp(90px, 11vw, 150px); height: auto; }
+.arrow { width: clamp(60px, 7vw, 100px); height: auto; }
+
+/* Slide 4 */
+.gauges { display: flex; gap: clamp(40px, 8vw, 140px); }
+.gauge { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.gauge svg { width: clamp(220px, 26vw, 340px); height: auto; }
+.arc { stroke-dasharray: 100; stroke-dashoffset: 100; animation: arc 2.2s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d); }
+@keyframes arc { to { stroke-dashoffset: var(--off); } }
+
+/* Slide 5 */
+.status { list-style: none; padding: 0; margin: 0; display: flex; flex-direction: column; gap: 18px; text-align: left; font-size: clamp(22px, 2.6vw, 34px); }
+.status li { display: flex; align-items: center; gap: 18px; }
+.status svg { width: 44px; height: 44px; flex: 0 0 44px; }
+
+/* Slide 6 */
+.steps { list-style: none; padding: 0; margin: 0; display: flex; gap: clamp(24px, 4vw, 64px); }
+.steps li { width: clamp(200px, 22vw, 300px); display: flex; flex-direction: column; align-items: flex-start; gap: 10px; text-align: left; border-top: 6px solid #1E9C7F; padding-top: 22px; }
+.steps b { font-family: 'Space Grotesk', Arial, sans-serif; font-size: clamp(22px, 2.4vw, 32px); }
+.num { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 22px; font-weight: 700; color: #0E7A62; }
+
+/* Slide 7 */
+.ring-art { width: min(44vw, 320px); height: auto; }
+
+/* Motion, paused until its slide is on screen */
+.a { animation: rise 1s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, 0s); }
+@keyframes rise { from { opacity: 0; transform: translateY(22px); } to { opacity: 1; transform: none; } }
+.s:not(.on) * { animation-play-state: paused; }
+.draw { stroke-dasharray: 100; stroke-dashoffset: 100; animation: draw 1.8s ease-in-out .3s forwards; }
+@keyframes draw { to { stroke-dashoffset: 0; } }
+.fade { transform-box: fill-box; transform-origin: bottom; animation: fade 2s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d); }
+@keyframes fade { from { transform: scaleY(1); } to { transform: scaleY(var(--end, .45)); } }
+.pop { transform-box: fill-box; transform-origin: center; animation: pop .8s cubic-bezier(.2,.9,.3,1.4) both; animation-delay: var(--d); }
+@keyframes pop { from { transform: scale(0); } to { transform: scale(1); } }
+.pulse { transform-box: fill-box; transform-origin: center; animation: pulse 2.4s ease-in-out infinite; }
+@keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.12); } }
+.needle { transform-origin: 80px 80px; animation: sweep 2.4s cubic-bezier(.2,.7,.2,1) 1.8s both; }
+@keyframes sweep { from { transform: rotate(-90deg); } to { transform: rotate(40deg); } }
+.ring { transform-box: fill-box; transform-origin: center; animation: ring 2.6s ease-out infinite; }
+@keyframes ring { from { transform: scale(.55); opacity: .9; } to { transform: scale(1.4); opacity: 0; } }
+
+.dots { position: fixed; left: 50%; bottom: 22px; transform: translateX(-50%); display: flex; gap: 10px; z-index: 10; }
+.dots button { width: 10px; height: 10px; border-radius: 5px; border: 0; padding: 0; background: #0E1A2B; opacity: .25; cursor: pointer; }
+.dots button.active { opacity: 1; background: #1E9C7F; }
+.ink ~ .dots button { }
+
+@media (max-width: 760px) {
+  .split { flex-direction: column-reverse; text-align: center; }
+  .split .text { align-items: center; }
+  .art { width: 70vw; }
+  .gauges, .steps, .flow { flex-direction: column; }
+  .arrow { transform: rotate(90deg); }
+  .steps li { text-align: center; align-items: center; }
+}
+@media (prefers-reduced-motion: reduce) { *, *::before, *::after { animation: none !important; } }
+
+.caps { display: flex; gap: clamp(24px, 5vw, 80px); font-size: clamp(18px, 2vw, 26px); font-weight: 600; color: #0E7A62; }
+
+.caption { font-size: 22px; font-weight: 600; color: #0E1A2B; }
+.cells .col { gap: 12px; }
+
+.nav-btn { position: fixed; top: 50%; transform: translateY(-50%); z-index: 11; width: 56px; height: 56px; border-radius: 28px; border: 0; background: #0E1A2B; color: #F4F1EA; font-size: 36px; line-height: 1; cursor: pointer; opacity: .75; }
+.nav-btn:hover, .nav-btn:focus-visible { opacity: 1; background: #1E9C7F; }
+.nav-btn.prev { left: 20px; }
+.nav-btn.next { right: 20px; }
+@media (max-width: 760px) { .nav-btn { width: 44px; height: 44px; font-size: 28px; } }
+
+.bars { display: flex; flex-direction: column; gap: 26px; width: min(90vw, 980px); }
+.brow { display: grid; grid-template-columns: 240px 1fr 170px; align-items: center; gap: 20px; text-align: left; }
+.blabel { display: flex; flex-direction: column; gap: 4px; }
+.blabel b { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 24px; }
+.blabel span { font-size: 17px; color: #4A5568; }
+.btrack { width: 100%; height: 44px; background: #DCD6C6; border-radius: 22px; overflow: hidden; }
+.bfill { height: 100%; border-radius: 22px; }
+.bval { font-size: 20px; font-weight: 600; white-space: nowrap; }
+.bval .big { font-size: 48px; display: inline-block; vertical-align: middle; }
+.axis { display: grid; grid-template-columns: 240px 1fr 170px; gap: 20px; font-size: 15px; color: #4A5568; }
+.ticks { display: flex; justify-content: space-between; }
+.example { font-size: clamp(18px, 1.9vw, 24px); max-width: 820px; background: #E9E4D8; border-radius: 16px; padding: 18px 24px; }
+@media (max-width: 760px) { .brow { grid-template-columns: 1fr; } .axis { display: none; } }
+
+/* Battery types slide */
+.types { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(20px, 4vw, 56px); width: min(92vw, 1080px); }
+.type { background: #E9E4D8; border-radius: 24px; padding: 24px 20px 26px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.type svg { width: clamp(90px, 10vw, 130px); height: auto; overflow: visible; }
+.type h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: clamp(22px, 2.3vw, 30px); margin: 6px 0 0; }
+.type .fmt { font-size: 17px; font-weight: 600; color: #0E7A62; letter-spacing: .04em; }
+.facts { list-style: none; padding: 0; margin: 8px 0 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 8px; }
+.facts li { font-size: 16px; background: #F4F1EA; border-radius: 999px; padding: 5px 12px; color: #2C3B52; }
+.facts li b { color: #0E1A2B; }
+@media (max-width: 760px) { .types { grid-template-columns: 1fr; } .type svg { width: 70px; } }
+
+/* Pilot journey slide */
+.journey { display: flex; align-items: center; justify-content: center; gap: clamp(8px, 1.5vw, 20px); width: min(calc(100vw - 180px), 1120px); }
+.stepcard { position: relative; flex: 1; background: #E9E4D8; border-radius: 24px; padding: 26px 18px 24px; display: flex; flex-direction: column; align-items: center; gap: 6px; }
+.stepcard svg { width: clamp(130px, 15vw, 200px); height: auto; overflow: visible; }
+.stepcard h3 { font-family: 'Space Grotesk', Arial, sans-serif; font-size: clamp(20px, 2.1vw, 28px); margin: 4px 0 0; }
+.stepcard .cap { font-size: clamp(15px, 1.4vw, 18px); color: #4A5568; }
+.badge { position: absolute; top: -16px; left: 50%; transform: translateX(-50%); width: 36px; height: 36px; border-radius: 18px; background: #0E1A2B; color: #F4F1EA; font-family: 'Space Grotesk', Arial, sans-serif; font-weight: 700; font-size: 18px; display: grid; place-items: center; }
+.link { width: clamp(44px, 6vw, 80px); flex: 0 0 auto; height: auto; }
+.spin2 { transform-origin: 160px 88px; animation: spin 5s linear infinite; }
+.pop { transform-box: fill-box; transform-origin: center; }
+@media (max-width: 760px) { .journey { flex-direction: column; } .link { transform: rotate(90deg); } }
+
+/* Shared motion helpers */
+.up { transform-box: fill-box; transform-origin: bottom center; animation: up 1.4s cubic-bezier(.2,.7,.2,1) both; animation-delay: var(--d, .3s); }
+@keyframes up { from { transform: scaleY(0); } to { transform: scaleY(1); } }
+.grow { transform-origin: left center; animation: grow 1.8s cubic-bezier(.2,.7,.2,1) both; }
+@keyframes grow { from { transform: scaleX(0); } to { transform: scaleX(1); } }
+.bob { animation: bob 2.6s ease-in-out infinite; animation-delay: var(--d, 0s); }
+@keyframes bob { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+@keyframes spin { to { transform: rotate(360deg); } }
+.dash { stroke-dasharray: 12 10; animation: dash 1s linear infinite; }
+@keyframes dash { to { stroke-dashoffset: -22; } }
