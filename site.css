@@ -177,3 +177,8 @@ p { margin: 0; }
 .creds b { color: #0E1A2B; font-weight: 600; }
 @media (max-width: 760px) { .presenter-chip { flex-direction: column; } .creds { text-align: center; } }
 .creds .name { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 1.35em; font-weight: 700; color: #0E1A2B; }
+
+/* Title-slide picture labels */
+.art-h { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 19px; font-weight: 700; fill: #0E1A2B; }
+.art-l { font-family: 'Inter', Arial, sans-serif; font-size: 14px; fill: #4A5568; }
+.art-n { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 34px; font-weight: 700; fill: #F4F1EA; }
