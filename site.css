@@ -176,3 +176,4 @@ p { margin: 0; }
 .creds { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 4px; font-size: clamp(15px, 1.4vw, 18px); color: #4A5568; text-align: left; }
 .creds b { color: #0E1A2B; font-weight: 600; }
 @media (max-width: 760px) { .presenter-chip { flex-direction: column; } .creds { text-align: center; } }
+.creds .name { font-family: 'Space Grotesk', Arial, sans-serif; font-size: 1.35em; font-weight: 700; color: #0E1A2B; }
